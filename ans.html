@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH WORLD</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .section {
+            background-color: lightgray;
+        }
+
+        button {
+            background-color: orange;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background-color: lightsalmon;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-select,
+        .contact-input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>TECH WORLD</h1>
+    </div>
+    <div class="container">
+        <p>
+            Welcome to Tech World – your ultimate destination for everything tech!
+        </p>
+        <p>
+            Vision: To bridge the gap between cutting-edge technology and everyday users by delivering accessible, engaging, and reliable tech content.
+        </p>
+        <p>
+            What is Tech World?
+            Tech World is a dynamic platform designed for tech enthusiasts, professionals, and beginners alike. Whether you're looking to explore the latest gadgets, master coding skills, or stay ahead of industry trends, Tech World has something for everyone.
+        </p>
+    </div>
+    <div class="form-container">
+        <form method="POST" onsubmit="showSuccessMessage(event)">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <div class="contact-group">
+                    <select id="country_code" name="country_code" class="contact-select" required>
+                        <option value="+254">+254</option>
+                        <option value="+255">+255</option>
+                        <option value="+256">+256</option>
+                        <option value="+257">+257</option>
+                    </select>
+                    <input type="text" id="contact" name="contact" class="contact-input" placeholder="7********" pattern="[7][0-9]{8}" maxlength="9" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <button type="submit">Check In</button>
+        </form>
+        <div id="success-message" style="display: none; color: green; margin-top: 15px;">
+            Form submitted successfully!
+        </div>
+    </div>
+</body>
+</html>
